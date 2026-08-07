@@ -1,0 +1,33 @@
+#background {
+    background-image: url(./images/pixelgothic.png);
+    background-size: cover;
+    height: 100dvh;
+    margin: 0%;
+}
+p {
+    margin: 0%;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+.jacquard-12-regular {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.jacquarda-bastarda-9-regular {
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #574f44
+}
+
+#taskbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #1c1a18;
+    justify-content: space-between;
+    padding-right: 10px;
+}

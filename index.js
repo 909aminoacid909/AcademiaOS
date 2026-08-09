@@ -61,3 +61,20 @@ function dragElement(element) {
     document.onmousemove = null;
   }
 }
+
+
+var selectedIcon = undefined
+
+function selectIcon(icon){
+  document.querySelector("#" + icon).classList.add("selected");
+  selectedIcon = document.querySelector("#" + icon)
+}
+
+function deselectIcon(icon){
+  document.querySelector("#" + icon).classList.remove("selected");
+  selectedIcon = undefined;
+}
+
+function handleIconTap() {
+  if (selectedIcon = "selected")
+}

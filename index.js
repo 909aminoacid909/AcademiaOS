@@ -1,10 +1,13 @@
 setInterval( updateTime, 1000);
 var biggestIndex = 1;
 var selectedIcon = undefined;
+var topBar = document.querySelector("#taskbar");
 
 //window dragging
 dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("notes"))
+
+
 
 // code to open and close welcome screen
 var welcomeScreen = document.querySelector("#welcome");
@@ -17,6 +20,9 @@ welcomeScreenOpen.addEventListener("click", function() {
   openWindow(welcomeScreen)
 })
 
+
+
+
 // code to open and close notes app
 var notesScreen = document.querySelector("#notes");
 var notesScreenClose = document.querySelector("#closeNotesTab");
@@ -28,17 +34,21 @@ notesScreenOpen.addEventListener("click", function() {
   openWindow(notesScreen)
 })
 
+windowTapHandling(notesScreen)
+windowTapHandling(welcomeScreen)
+
 function windowTapHandling(element) {
   element.addEventListener("mousedown", function() {
     handleWindowTap(element);
   })
 }
 
-function handleWindowTap() {
+function handleWindowTap(element) {
   biggestIndex++;
   element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+  deselectIcon(selectedIcon);
 }
-
 
 
 
@@ -66,7 +76,10 @@ function closeWindow(element) {
   element.style.display = "none"
 }
 function openWindow(element) {
-  element.style.display = "flex"
+  element.style.display = "flex";
+  biggestIndex++;
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
 }
 
 function updateTime() {

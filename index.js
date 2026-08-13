@@ -1,14 +1,39 @@
 
+
+setInterval( updateTime, 1000);
+
+dragElement(document.getElementById("welcome"));
+
+//$("#closeWelcomeTab").click(closeWindow($("#welcome")));
+
+//$("#openWelcomeTab").click(openWindow($("#welcome")));
+
+var welcomeScreen = document.querySelector("#welcome");
+var welcomeScreenClose = document.querySelector("#closeWelcomeTab");
+var welcomeScreenOpen = document.querySelector("#openWelcomeTab");
+welcomeScreenClose.addEventListener("click", function() {
+  closeWindow(welcomeScreen)
+})
+welcomeScreenOpen.addEventListener("click", function() {
+  openWindow(welcomeScreen)
+})
+
+
+
+
+
+function closeWindow(element) {
+  element.style.display = "none"
+}
+function openWindow(element) {
+  element.style.display = "flex"
+}
+
 function updateTime() {
     var currentTime = new Date().toLocaleString();
     var timeText = document.querySelector(".time-now");
     timeText.innerHTML = currentTime;
 }
-
-setInterval( updateTime, 1000)
-
-
-dragElement(document.getElementById("welcome"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -60,21 +85,15 @@ function dragElement(element) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
-}
+};
 
 
-var selectedIcon = undefined
+$("#notesapp").click(function() {
+  $("#notesapp").addClass("selected")
+});
 
-function selectIcon(icon){
-  document.querySelector("#" + icon).classList.add("selected");
-  selectedIcon = document.querySelector("#" + icon)
-}
 
-function deselectIcon(icon){
-  document.querySelector("#" + icon).classList.remove("selected");
-  selectedIcon = undefined;
-}
 
-function handleIconTap() {
-  if (selectedIcon = "selected")
-}
+
+
+

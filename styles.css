@@ -1,15 +1,7 @@
-#background {
-    background-image: url(./images/pixelgothic.png);
-    background-size: cover;
-    height: 100dvh;
-    margin: 0%;
+*:not(#background) {
+  pointer-events: auto;
 }
-p {
-    margin: 0%;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
+
 .jacquard-12-regular {
   font-family: "Jacquard 12", system-ui;
   font-weight: 400;
@@ -19,7 +11,22 @@ p {
   font-family: "Jacquarda Bastarda 9", serif;
   font-weight: 400;
   font-style: normal;
-  color: #574f44
+  color: #837c6f;
+}
+
+p {
+    margin: 0%;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+#background {
+    background-image: url(./images/pixelgothic.png);
+    background-size: cover;
+    height: 100dvh;
+    margin: 0%;
+    pointer-events: none;
 }
 
 #taskbar {
@@ -32,27 +39,32 @@ p {
     padding-right: 10px;
 }
 
-#welcome {
+.app-window {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 500px;
   width: 500px;
   background-color: #6b6e73;
   border: 8px solid #1c1a18;
 }
-#welcomeheader {
+
+.app-header {
   height: 40px;
   width: 500px;
   background-color: #1c1a18;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  pointer-events: auto;
 }
 
-#closeWelcomeTab {
+.close-button {
   cursor: pointer;
 }
 
-#openWelcomeTab{
+.open-button{
   cursor: pointer;
 }
 
@@ -61,7 +73,7 @@ p {
 }
 
 
-#bookicon {
+#openNotesTab {
   width: 170px;
   height: auto;
 }
@@ -76,7 +88,6 @@ p {
   position: relative;
   top: 40px;
   left: 15px;
-  z-index: -1;
   display: flex;
   flex-direction: column;
   justify-content: center;

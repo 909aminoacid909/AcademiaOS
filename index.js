@@ -1,13 +1,12 @@
-
-
 setInterval( updateTime, 1000);
+var biggestIndex = 1;
+var selectedIcon = undefined;
 
+//window dragging
 dragElement(document.getElementById("welcome"));
+dragElement(document.getElementById("notes"))
 
-//$("#closeWelcomeTab").click(closeWindow($("#welcome")));
-
-//$("#openWelcomeTab").click(openWindow($("#welcome")));
-
+// code to open and close welcome screen
 var welcomeScreen = document.querySelector("#welcome");
 var welcomeScreenClose = document.querySelector("#closeWelcomeTab");
 var welcomeScreenOpen = document.querySelector("#openWelcomeTab");
@@ -18,9 +17,50 @@ welcomeScreenOpen.addEventListener("click", function() {
   openWindow(welcomeScreen)
 })
 
+// code to open and close notes app
+var notesScreen = document.querySelector("#notes");
+var notesScreenClose = document.querySelector("#closeNotesTab");
+var notesScreenOpen = document.querySelector("#openNotesTab");
+notesScreenClose.addEventListener("click", function() {
+  closeWindow(notesScreen)
+})
+notesScreenOpen.addEventListener("click", function() {
+  openWindow(notesScreen)
+})
+
+function windowTapHandling(element) {
+  element.addEventListener("mousedown", function() {
+    handleWindowTap(element);
+  })
+}
+
+function handleWindowTap() {
+  biggestIndex++;
+  element.style.zIndex = biggestIndex;
+}
 
 
 
+
+function selectIcon(element) {
+  element.classList.add("selected");
+  selectedIcon = element;
+}
+
+function deselectIcon(element) {
+  element.classList.remove("selected");
+  selectedIcon = undefined;
+}
+
+function handleIconTap(element) {
+  if (element.classList.contains("selected")) {
+    deselectIcon(element);
+    openWindow(window);
+  }
+  else {
+    selectIcon(element);
+  }
+}
 
 function closeWindow(element) {
   element.style.display = "none"
@@ -88,9 +128,7 @@ function dragElement(element) {
 };
 
 
-$("#notesapp").click(function() {
-  $("#notesapp").addClass("selected")
-});
+
 
 
 

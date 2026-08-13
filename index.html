@@ -12,21 +12,27 @@
     </head>
     <body id="background">
         <div id="taskbar">
-            <p class="jacquarda-bastarda-9-regular" id="openWelcomeTab">AcademiaOS</p>
+            <p class="jacquarda-bastarda-9-regular open-button" id="openWelcomeTab">AcademiaOS</p>
             <p class="time-now jacquarda-bastarda-9-regular"> Time </p>
         </div>
-        <div id="welcome">
-            <div id="welcomeheader">
+        <div id="welcome" class="app-window">
+            <div id="welcomeheader" class="app-header">
                 <p class="jacquarda-bastarda-9-regular header-title" >Welcome!</p>
-                <img src="./images/closebutton.png" height="30px" id="closeWelcomeTab">
+                <img src="./images/closebutton.png" height="30px" id="closeWelcomeTab" class="close-button">
             </div>
         </div>
         <div id="notesapp" class="flex-row app">
             <div>
-            <img src="./images/book222.png" id="bookicon">
+            <img src="./images/book222.png" id="openNotesTab" class="open-button">
             </div>
             <div>
             <p class="jacquarda-bastarda-9-regular apptitle" >Notes</p>
+            </div>
+        </div>
+        <div id="notes" class="app-window">
+            <div id="notesheader" class="app-header">
+                <p class="jacquarda-bastarda-9-regular header-title" >Notes</p>
+                <img src="./images/closebutton.png" height="30px" id="closeNotesTab" class="close-button">
             </div>
         </div>
         

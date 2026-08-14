@@ -48,7 +48,13 @@ p {
   width: 500px;
   background-color: #6b6e73;
   border: 8px solid #1c1a18;
+  display: none;
 }
+
+#welcome {
+  display: flex;
+}
+
 
 .app-header {
   height: 40px;
@@ -58,6 +64,10 @@ p {
   flex-direction: row;
   justify-content: space-between;
   pointer-events: auto;
+}
+
+#notes {
+  display: none;
 }
 
 .close-button {
@@ -73,13 +83,13 @@ p {
 }
 
 
-#openNotesTab {
-  width: 170px;
+.open-button {
+  width: 120px;
   height: auto;
 }
 
 .apptitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #c1bcb4;
   text-align: center;
 }
@@ -91,9 +101,9 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 180px;
+  width: 120px;
   border-radius: 20px;
-  height: 180px;
+  height: 140px;
 }
 
 .selected {

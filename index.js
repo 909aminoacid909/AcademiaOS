@@ -5,7 +5,10 @@ var topBar = document.querySelector("#taskbar");
 
 //window dragging
 dragElement(document.getElementById("welcome"));
-dragElement(document.getElementById("notes"))
+dragElement(document.getElementById("notes"));
+dragElement(document.getElementById("music"));
+dragElement(document.getElementById("calculator"));
+dragElement(document.getElementById("browser"))
 
 
 
@@ -20,13 +23,10 @@ welcomeScreenOpen.addEventListener("click", function() {
   openWindow(welcomeScreen)
 })
 
-
-
-
 // code to open and close notes app
 var notesScreen = document.querySelector("#notes");
-var notesScreenClose = document.querySelector("#closeNotesTab");
-var notesScreenOpen = document.querySelector("#openNotesTab");
+var notesScreenClose = document.querySelector("#close-notes-tab");
+var notesScreenOpen = document.querySelector("#open-notes-tab");
 notesScreenClose.addEventListener("click", function() {
   closeWindow(notesScreen)
 })
@@ -34,8 +34,61 @@ notesScreenOpen.addEventListener("click", function() {
   openWindow(notesScreen)
 })
 
+var musicScreen = document.querySelector("#music");
+var musicScreenClose = document.querySelector("#close-music-tab");
+var musicScreenOpen = document.querySelector("#open-music-tab");
+musicScreenClose.addEventListener("click", function() {
+  closeWindow(musicScreen)
+})
+musicScreenOpen.addEventListener("click", function() {
+  openWindow(musicScreen)
+})
+
+var calculatorScreen = document.querySelector("#calculator");
+var calculatorScreenClose = document.querySelector("#close-calculator-tab");
+var calculatorScreenOpen = document.querySelector("#open-calculator-tab");
+calculatorScreenClose.addEventListener("click", function() {
+  closeWindow(calculatorScreen)
+})
+calculatorScreenOpen.addEventListener("click", function() {
+  openWindow(calculatorScreen)
+})
+
+var browserScreen = document.querySelector("#browser");
+var browserScreenClose = document.querySelector("#close-browser-tab");
+var browserScreenOpen = document.querySelector("#open-browser-tab");
+browserScreenClose.addEventListener("click", function() {
+  closeWindow(browserScreen)
+})
+browserScreenOpen.addEventListener("click", function() {
+  openWindow(browserScreen)
+})
+
+
+
+// move clicked window to the front of screen
 windowTapHandling(notesScreen)
-windowTapHandling(welcomeScreen)
+windowTapHandling(musicScreen)
+windowTapHandling(calculatorScreen)
+windowTapHandling(browserScreen)
+
+
+document.querySelector("#notesapp").addEventListener("click", function() {
+  handleIconTap(document.querySelector("#notesapp"));
+});
+
+document.querySelector("#musicapp").addEventListener("click", function() {
+  handleIconTap(document.querySelector("#musicapp"));
+});
+
+document.querySelector("#calculatorapp").addEventListener("click", function() {
+  handleIconTap(document.querySelector("#calculatorapp"));
+});
+
+document.querySelector("#browserapp").addEventListener("click", function() {
+  handleIconTap(document.querySelector("#browserapp"));
+});
+
 
 function windowTapHandling(element) {
   element.addEventListener("mousedown", function() {

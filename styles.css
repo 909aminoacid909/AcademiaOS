@@ -137,13 +137,16 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
+
 
 #notes-flex-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 20px;
 }
 
 #new-note-button {
@@ -169,4 +172,48 @@ p {
   width: 150px;
   background-color: #a993ce;
 
+}
+
+.calc-button {
+  height: 100px;
+  width: 100px;
+  background-color: #7686d6;
+  border-color: #596ed5;
+  color: #484a85;
+  border-width: 5px;
+  font-size: 3rem;
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.calc-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 650px;
+  width: 412px;
+
+}
+
+#act-calculator {
+  overflow: hidden;
+}
+
+#display {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  text-align: left;
+  background-color: #9ba8e8;
+  font-size: 3rem;
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #484a85;
+
+}
+
+#calculatorheader {
+  width: 420px;
 }

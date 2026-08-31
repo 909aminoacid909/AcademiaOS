@@ -41,6 +41,10 @@
             <div id="notes-flex-box">
                 <div class="blank-notes">Blank</div>
                 <div class="blank-notes">Blank</div>
+                <div class="blank-notes">Blank</div>
+                <div class="blank-notes">Blank</div>
+                <div class="blank-notes">Blank</div>
+                <div class="blank-notes">Blank</div>
             </div>
         </div>
 
@@ -71,10 +75,32 @@
             <p class="jacquarda-bastarda-9-regular apptitle" >Calculator</p>
             </div>
         </div>
-        <div id="calculator" class="app-window">
+        <div id="calculator" class="app-window calc-window">
             <div id="calculatorheader" class="app-header">
                 <p class="jacquarda-bastarda-9-regular header-title" >Calculator</p>
                 <img src="./images/closebutton.png" height="30px" id="close-calculator-tab" class="close-button">
+            </div>
+            <div id="act-calculator">
+                    <input id="display" readonly>
+                    <div id="keys">
+                        <button class="calc-button" onclick="appendToDisplay('+')">+</button>
+                        <button class="calc-button" onclick="appendToDisplay('7')">7</button>
+                        <button class="calc-button" onclick="appendToDisplay('8')">8</button>
+                        <button class="calc-button" onclick="appendToDisplay('9')">9</button>
+                        <button class="calc-button" onclick="appendToDisplay('-')">-</button>
+                        <button class="calc-button" onclick="appendToDisplay('4')">4</button>
+                        <button class="calc-button" onclick="appendToDisplay('5')">5</button>
+                        <button class="calc-button" onclick="appendToDisplay('6')">6</button>
+                        <button class="calc-button" onclick="appendToDisplay('*')">*</button>
+                        <button class="calc-button" onclick="appendToDisplay('1')">1</button>
+                        <button class="calc-button" onclick="appendToDisplay('2')">2</button>
+                        <button class="calc-button" onclick="appendToDisplay('3')">3</button>
+                        <button class="calc-button" onclick="appendToDisplay('/')">/</button>
+                        <button class="calc-button" onclick="appendToDisplay('0')">0</button>
+                        <button class="calc-button" onclick="appendToDisplay('.')">.</button>
+                        <button class="calc-button" onclick="calculate()">=</button>
+                        <button class="calc-button" onclick="clearDisplay()">C</button>
+                    </div>
             </div>
         </div>
 

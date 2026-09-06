@@ -77,6 +77,7 @@ p {
   display: none;
   background-color:#753151;
   border: 8px solid #1c1a18;
+  height: 650px;
 }
 
 #calculator {
@@ -193,7 +194,12 @@ p {
   align-items: center;
   height: 650px;
   width: 412px;
+}
 
+.music-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #act-calculator {
@@ -216,4 +222,46 @@ p {
 
 #calculatorheader {
   width: 420px;
+}
+
+#music-item-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 10px
+}
+
+.music-button {
+  height: 80px;
+  width: 80px;
+  background-color: #ba5c86;
+  border-color: #b32a75;
+  color: #932357;
+  border-width: 5px;
+  font-size: 3rem;
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#music-player-image {
+  border-color: #932357;
+  border: 10px;
+  border-radius: 3px;
+}
+.music-text {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(221, 211, 204);
+}
+
+
+#slider-song {
+  accent-color: #ce81a4;
+  width: 400px;
 }

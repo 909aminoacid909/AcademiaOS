@@ -214,6 +214,18 @@ function calculate() {
   }
 }
 
+const songImage = document.getElementById("song-image");
+const songName = document.getElementById("song-name");
+const songArtist = document.getElementById("song-artist");
+
+const songSlider = document.getElementById("slider-song");
+
+const playpauseButton = document.getElementById("playpause-song");
+
+const songs = {
+  
+}
+
 
 
 

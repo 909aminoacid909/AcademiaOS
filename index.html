@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>AcademiaOS</title>
+        <title>AcademiaOS</title>   
         <link
         rel="stylesheet"
         href="./styles.css">
@@ -65,15 +65,15 @@
                 <img src="./images/closebutton.png" height="30px" id="close-music-tab" class="close-button">
             </div>
             <div id="music-item-holder">
-                <img id="music-player-image" src="./images/music-image.png" height="300px">
-                <div class="music-text">Song Name</div>
-                <div class="music-text">Artist</div>
+                <img id="song-image" src="./images/music-image.png" height="300px">
+                <div id="song-name" class="music-text">Song Name</div>
+                <div id="song-artist" class="music-text song-artist">Artist</div>
                 <input id="slider-song" type="range" width="400px">
                 <div>
                     <button class="music-button">⇄</button>
-                    <button class="music-button">⏮</button>
-                    <button class="music-button">▶</button>
-                    <button class="music-button">⏭</button>
+                    <button id="prev-song" class="music-button">⏮</button>
+                    <button id="playpause-song" class="music-button">▶</button>
+                    <button id="next-song" class="music-button">⏭</button>
                     <button class="music-button">↻</button>
                 </div>
             </div>

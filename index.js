@@ -221,11 +221,61 @@ const songArtist = document.getElementById("song-artist");
 const songSlider = document.getElementById("slider-song");
 
 const playpauseButton = document.getElementById("playpause-song");
+const prevSongButton = document.getElementById("prev-song");
+const nextSongButton = document.getElementById("next-song")
 
-const songs = {
-  
+const songs = [
+  {
+    image: "./images/music-image.png",
+    name: "Fantasize",
+    artist: "Adela",
+    audio: ""
+  },
+  {
+    image: "./images/music-image.png",
+    name: "Falling behind",
+    artist: "Laufey",
+    audio: ""
+  },
+  {
+    image: "./images/music-image.png",
+    name: "Maggots for Brains",
+    artist: "Olivia Rodrigo",
+    audio: ""
+  },
+];
+
+const audio = document.createElement("audio");
+let currentSongIndex = 0;
+updateSong();
+
+prevSongButton.addEventListener("click", function() {
+  if (currentSongIndex == 0) {
+    return;
+  }
+  currentSongIndex--;
+  updateSong();
+});
+
+nextSongButton.addEventListener("click", function() {
+  if (currentSongIndex == songs.length - 1) {
+    return;
+  }
+  currentSongIndex++;
+  updateSong();
+});
+
+playpauseButton.addEventListener("click", function() {
+  audio.play();
+})
+
+function updateSong() {
+  const song = songs[currentSongIndex];
+  songImage.src = song.image;
+  songName.innerText = song.name;
+  songArtist.innerText = song.artist;
+  audio.src = song.audio;
 }
-
 
 
 

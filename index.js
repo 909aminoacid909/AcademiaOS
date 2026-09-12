@@ -71,6 +71,7 @@ windowTapHandling(notesScreen)
 windowTapHandling(musicScreen)
 windowTapHandling(calculatorScreen)
 windowTapHandling(browserScreen)
+windowTapHandling(welcomeScreen)
 
 
 document.querySelector("#notesapp").addEventListener("click", function() {

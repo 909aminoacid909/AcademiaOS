@@ -134,45 +134,10 @@ p {
   background-color: rgba(255, 255, 255, 0.234);
 }
 
-.notes-window {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-
-#notes-flex-box {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-#new-note-button {
-  background-image: url('./images/note-button.png'); 
-  background-repeat: no-repeat; 
-  background-position: center; 
-  background-size: cover; 
-  width: 150px; 
-  height: 70px; 
-  border: none; 
-  background-color: transparent; 
-  cursor: pointer;
-  margin-top: 20px;
-  font-family: serif;
-  font-weight: 400;
-  font-style: normal;
-  color: black;
-  font-size: 1.3rem;
-}
-
 .blank-notes {
   height: 200px;
   width: 150px;
   background-color: #a993ce;
-
 }
 
 .calc-button {
@@ -265,3 +230,66 @@ p {
   accent-color: #ce81a4;
   width: 400px;
 }
+
+iframe {
+		width: 100%;
+    height: 460px;
+    filter: invert(90%) hue-rotate(180deg);
+    color-scheme: dark;
+}
+
+.browser-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 700px;
+}
+
+#browserheader {
+  width: 700px;
+}
+
+#calc-title {
+  font-size: 1.36rem;
+}
+
+.notes-window {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 660px;
+}
+
+#notesheader {
+  width: 660px;
+}
+
+#notes-content {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 10px;
+  overflow: hidden;
+}
+
+.note {
+  height: 150px;
+  width: 150px;
+  resize: none;
+  background-color: #836fda;
+}
+
+.add-note {
+  width: 155px;
+  font-size: 6rem;
+  background-color: #7b54fd;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-note:hover {
+  background-color: #6235f9;
+}
+
+

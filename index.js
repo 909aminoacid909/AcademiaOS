@@ -194,6 +194,8 @@ function dragElement(element) {
 };
 
 
+//code for calculator app
+
 const display = document.getElementById("display");
 
 function appendToDisplay(input) {
@@ -214,6 +216,8 @@ function calculate() {
   }
 }
 
+//code for music app
+
 const songImage = document.getElementById("song-image");
 const songName = document.getElementById("song-name");
 const songArtist = document.getElementById("song-artist");
@@ -223,30 +227,33 @@ const songSlider = document.getElementById("slider-song");
 const playpauseButton = document.getElementById("playpause-song");
 const prevSongButton = document.getElementById("prev-song");
 const nextSongButton = document.getElementById("next-song")
+const shuffleButton = document.getElementById("shuffle-song");
+const replayButton = document.getElementById("replay-song")
 
 const songs = [
   {
     image: "./images/music-image.png",
-    name: "Fantasize",
-    artist: "Adela",
-    audio: ""
+    name: "Can You Hear The Music",
+    artist: "Ludwig Göransson",
+    audio: "./music/canyouhearthemusic.mp3"
   },
   {
     image: "./images/music-image.png",
-    name: "Falling behind",
-    artist: "Laufey",
-    audio: ""
+    name: "Champagne Coast",
+    artist: "Blood Orange",
+    audio: "./music/champagnecoast.mp3"
   },
   {
     image: "./images/music-image.png",
-    name: "Maggots for Brains",
-    artist: "Olivia Rodrigo",
-    audio: ""
+    name: "Quantum Mechanics",
+    artist: "Ludwig Göransson",
+    audio: "./music/quantummechanics.mp3"
   },
 ];
 
 const audio = document.createElement("audio");
 let currentSongIndex = 0;
+var songRepeat = false;
 updateSong();
 
 prevSongButton.addEventListener("click", function() {
@@ -266,8 +273,35 @@ nextSongButton.addEventListener("click", function() {
 });
 
 playpauseButton.addEventListener("click", function() {
-  audio.play();
-})
+  if (!audio.paused) {
+    audio.pause();
+    playpauseButton.innerHTML = "▶"
+  }
+  else {
+    audio.play();
+    playpauseButton.innerHTML = "|| "
+  }
+});
+
+shuffleButton.addEventListener("click", function() {
+  var randomInteger = Math.floor(Math.random() * (songs.length));
+  currentSongIndex = randomInteger;
+  updateSong();
+});
+
+replayButton.addEventListener("click", function() {
+  if (songRepeat == false) {
+    songRepeat = true;
+    replayButton.innerHTML = "*";
+    audio.addEventListener('ended', function() {
+      audio.play()
+    });
+  }
+  else {
+    songRepeat = false;
+    replayButton.innerHTML = "↻"
+  }
+});
 
 function updateSong() {
   const song = songs[currentSongIndex];
@@ -275,8 +309,94 @@ function updateSong() {
   songName.innerText = song.name;
   songArtist.innerText = song.artist;
   audio.src = song.audio;
+  audio.onloadedmetadata = function() {
+    songSlider.value = 0;
+    songSlider.max = audio.duration;
+  }
 }
 
+songSlider.addEventListener("change", function() {
+  audio.currentTime = songSlider.value;
+})
+
+function moveSlider() {
+  songSlider.value = audio.currentTime;
+};
+
+setInterval(moveSlider, 1000)
+
+
+//code for notes app
+
+const notesContainer = document.getElementById("notes-content");
+const addNoteButton = notesContainer.querySelector(".add-note");
+
+getNotes().forEach((note) => {
+  const noteElement = createNoteElement(note.id, note.content);
+  notesContainer.insertBefore(noteElement, addNoteButton);
+});
+
+addNoteButton.addEventListener("click", () => addNote());
+
+function getNotes() {
+  return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]");
+}
+
+function saveNotes(notes) {
+  localStorage.setItem("stickynotes-notes", JSON.stringify(notes));
+}
+function createNoteElement(id, content) {
+  const element = document.createElement("textarea");
+
+  element.classList.add("note");
+  element.value = content;
+  element.placeholder = "Empty Sticky Note";
+
+  element.addEventListener("change", () => {
+    updateNote(id, element.value);
+  });
+
+  element.addEventListener("dblclick", () => {
+    const doDelete = confirm(
+      "Delete the sticky note?"
+    );
+
+    if (doDelete) {
+      deleteNote(id, element);
+    }
+  });
+
+  return element;
+}
+
+function addNote() {
+  const notes = getNotes();
+  const noteObject = {
+    id: Math.floor(Math.random() * 100000),
+    content: ""
+  };
+
+  const noteElement = createNoteElement(noteObject.id, noteObject.content);
+  notesContainer.insertBefore(noteElement, addNoteButton);
+
+  notes.push(noteObject);
+  saveNotes(notes);
+}
+
+function updateNote(id, newContent) {
+  const notes = getNotes();
+  const targetNote = notes.filter((note) => note.id == id)[0];
+
+  targetNote.content = newContent;
+  saveNotes(notes);
+}
+
+function deleteNote(id, element) {
+  const notes = getNotes().filter((note) => note.id != id);
+
+  saveNotes(notes);
+  notesContainer.removeChild(element);
+}
 
 
 

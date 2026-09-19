@@ -8,7 +8,11 @@ dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("notes"));
 dragElement(document.getElementById("music"));
 dragElement(document.getElementById("calculator"));
-dragElement(document.getElementById("browser"))
+dragElement(document.getElementById("browser"));
+dragElement(document.getElementById("pomo"));
+dragElement(document.getElementById("photo"));
+dragElement(document.getElementById("list"));
+dragElement(document.getElementById("weather"));
 
 
 
@@ -16,6 +20,8 @@ dragElement(document.getElementById("browser"))
 var welcomeScreen = document.querySelector("#welcome");
 var welcomeScreenClose = document.querySelector("#closeWelcomeTab");
 var welcomeScreenOpen = document.querySelector("#openWelcomeTab");
+
+
 welcomeScreenClose.addEventListener("click", function() {
   closeWindow(welcomeScreen)
 })
@@ -64,6 +70,46 @@ browserScreenOpen.addEventListener("click", function() {
   openWindow(browserScreen)
 })
 
+var pomoScreen = document.querySelector("#pomo");
+var pomoScreenClose = document.querySelector("#close-pomo-tab");
+var pomoScreenOpen = document.querySelector("#open-pomo-tab");
+pomoScreenClose.addEventListener("click", function() {
+  closeWindow(pomoScreen)
+})
+pomoScreenOpen.addEventListener("click", function() {
+  openWindow(pomoScreen)
+})
+
+var photoScreen = document.querySelector("#photo");
+var photoScreenClose = document.querySelector("#close-photo-tab");
+var photoScreenOpen = document.querySelector("#open-photo-tab");
+photoScreenClose.addEventListener("click", function() {
+  closeWindow(photoScreen)
+})
+photoScreenOpen.addEventListener("click", function() {
+  openWindow(photoScreen)
+})
+
+var listScreen = document.querySelector("#list");
+var listScreenClose = document.querySelector("#close-list-tab");
+var listScreenOpen = document.querySelector("#open-list-tab");
+listScreenClose.addEventListener("click", function() {
+  closeWindow(listScreen)
+})
+listScreenOpen.addEventListener("click", function() {
+  openWindow(listScreen)
+})
+
+var weatherScreen = document.querySelector("#weather");
+var weatherScreenClose = document.querySelector("#close-weather-tab");
+var weatherScreenOpen = document.querySelector("#open-weather-tab");
+weatherScreenClose.addEventListener("click", function() {
+  closeWindow(weatherScreen)
+})
+weatherScreenOpen.addEventListener("click", function() {
+  openWindow(weatherScreen)
+})
+
 
 
 // move clicked window to the front of screen
@@ -72,6 +118,10 @@ windowTapHandling(musicScreen)
 windowTapHandling(calculatorScreen)
 windowTapHandling(browserScreen)
 windowTapHandling(welcomeScreen)
+windowTapHandling(pomoScreen)
+windowTapHandling(photoScreen)
+windowTapHandling(listScreen)
+windowTapHandling(weatherScreen)
 
 
 document.querySelector("#notesapp").addEventListener("click", function() {
@@ -88,6 +138,22 @@ document.querySelector("#calculatorapp").addEventListener("click", function() {
 
 document.querySelector("#browserapp").addEventListener("click", function() {
   handleIconTap(document.querySelector("#browserapp"));
+});
+
+document.querySelector("#pomoapp").addEventListener("click", function() {
+  handleIconTap(document.querySelector("#pomoapp"));
+});
+
+document.querySelector("#photoapp").addEventListener("click", function() {
+  handleIconTap(document.querySelector("#photoapp"));
+});
+
+document.querySelector("#listapp").addEventListener("click", function() {
+  handleIconTap(document.querySelector("#listapp"));
+});
+
+document.querySelector("#weatherapp").addEventListener("click", function() {
+  handleIconTap(document.querySelector("#weatherapp"));
 });
 
 
@@ -399,6 +465,131 @@ function deleteNote(id, element) {
   notesContainer.removeChild(element);
 }
 
+// code for pomodoro app //
+
+const startButton = document.getElementById("start");
+const stopButton = document.getElementById("stop");
+const resetButton = document.getElementById("reset");
+const pomoTimer = document.getElementById("pomo-timer");
+
+
+let timeLeft = 1500;
+let interval
+
+
+function updateTimer() {
+  let minutes = Math.floor(timeLeft / 60);
+  let seconds = timeleft % 60;
+  let formattedTime = minutes + ":" + seconds;
+
+  pomoTimer.innerHTML = formattedTime;
+
+  //pomoTimer.innerHTML = 
+  //`${minutes.toString().padStart(2,"0")}
+  //:
+  //${seconds.toString().padStart(2,"0")}:${seconds}`;
+};
+
+function startTimer() {
+  interval = setInterval(() => {
+    timeLeft--;
+    updateTimer();
+
+    if (timeLeft === 0) {
+      clearInterval(interval);
+      alert("Study Session's over!");
+      timeLeft = 1500;
+      updateTimer();
+    }
+
+  }, 1000);
+};
+
+function stopTimer() {
+  clearInterval(interval)
+};
+
+function resetTimer() {
+  clearInterval(interval);
+  timeLeft = 1500;
+  updateTimer();
+};
+
+startButton.addEventListener("click", startTimer);
+stopButton.addEventListener("click", stopTimer);
+resetButton.addEventListener("click", resetTimer);
+
+
+
+
+
+//weather app
+
+const weatherCodeMap = {
+    0: ["Clear Sky", "./images/sun.png"],
+    1: ["Mainly Clear", "./images/sun.png"],
+    2: ["Partly Cloudy", "./images/cloudy.png"],
+    3: ["Overcast", "./images/overcast.png"],
+    45: ["Fog", "./images/fog.png"],
+    48: ["Depositing Rime Fog", "./images/fog.png"],
+    51: ["Light Drizzle", "./images/rain.png"],
+    53: ["Moderate Drizzle", "./images/rain.png"],
+    55: ["Dense Drizzle", "./images/rain.png"],
+    56: ["Light Freezing Drizzle", "./images/rain.png"],
+    57: ["Dense Freezing Drizzle", "./images/rain.png"],
+    61: ["Slight Rain", "./images/rain.png"],
+    63: ["Moderate Rain", "./images/rain.png"],
+    65: ["Heavy Rain", "./images/rain.png"],
+    66: ["Light Freezing Rain", "./images/rain.png"],
+    67: ["Dense Freezing Rain", "./images/rain.png"],
+    71: ["Light Snow", "./images/snow.png"],
+    73: ["Moderate Snow", "./images/snow.png"],
+    75: ["Heavy Snow", "./images/snow.png"],
+    77: ["Snow Grains", "./images/snow.png"],
+    80: ["Slight Rain Showers", "./images/rain.png"],
+    81: ["Moderate Rain Showers", "./images/rain.png"],
+    82: ["Violent Rain Showers", "./images/rain.png"],
+    85: ["Slight Snow Showers", "./images/snow.png"],
+    86: ["Heavy Snow Showers", "./images/snow.png"],
+    95: ["Thunderstorm", "./images/thunderstorm.png"],
+    96: ["Thunderstorm With Slight Hail", "./images/thunderstorm.png"],
+    99: ["Thunderstorm With Heavy Hail", "./images/thunderstorm.png"]
+};
+
+const cityInput = document.getElementById("weather-city-input");
+const searchButton = document.getElementById("weather-search-button");
+searchButton.addEventListener("click", getWeather)
+
+async function getWeather() {
+  const city = cityInput.value.trim();
+
+  const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${city}`;
+  const geoResponse = await fetch(geoUrl);
+  const geoData = await geoResponse.json();
+  console.log(geoData);
+
+  const latitude = geoData.results[0].latitude;
+  const longitude = geoData.results[0].longitude;
+  const country = geoData.results[0].country;
+
+  const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+  const weatherResponse = await fetch(weatherUrl);
+  const weatherData = await weatherResponse.json();
+  console.log(weatherData)
+
+  const temperature = weatherData.current_weather.temperature;
+  const windSpeed = weatherData.current_weather.windspeed;
+  const weatherCode = weatherData.current_weather.weathercode;
+  const [weatherCondition, weatherImage] = weatherCodeMap[weatherCode];
+
+  document.getElementById("weather-image").src = weatherImage;
+  document.getElementById("weather-temperature").innerText = temperature;
+  document.getElementById("weather-windspeed").innerText = windSpeed;
+  document.getElementById("weather-condition").innerText = weatherCondition;
+  document.getElementById("weather-city").innerText = city
+
+
+}
 
 
 

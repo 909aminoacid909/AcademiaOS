@@ -305,3 +305,121 @@ iframe {
   font-style: normal;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 15px;
+}
+
+/* pomodoro app styling */
+
+#pomo {
+  display: none;
+  background-color: #21273a;
+  border: 8px solid #1c1a18;
+}
+
+.pomo-window {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+}
+
+#pomoheader {
+  width: 400px;
+}
+
+#pomo-button-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#pomo-timer {
+  margin-top: 50px;
+  font-size: 7rem;
+  text-align: center;
+  color: #978F66;
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.pomo-button {
+  height: 100px;
+  width: 100px;
+  background-color: #202940;
+  border-color: #21273a;
+  color: #978F66;
+  border-width: 5px;
+  font-size: 1.6rem;
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+/* photo booth app */
+
+/* weather widget */
+
+.weather-window {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(90, 110, 107);
+    color: rgb(28, 26, 24);
+    height: 550px;
+}
+
+#weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Jacquarda Bastarda 9", serif;
+}
+
+#weather-search-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#weather-city-input {
+    background-color: rgb(181, 177, 177);
+    height: 45px;
+    width: 190px;
+    font-family: "Jacquarda Bastarda 9", serif;
+    color: rgb(28, 26, 24);
+    font-size: 1.2rem;
+}
+
+#weather-search-button {
+    height: 50px;
+    width: 80px;
+    background-color: rgb(28, 26, 24);
+    font-family: "Jacquarda Bastarda 9", serif;
+    color: rgb(131, 124, 111);
+    font-size: 1.2rem;
+    text-align: center;
+    border-color: rgb(36, 33, 31);
+}
+
+#weather-city {
+    font-size: 2.2rem;
+}
+.weather-info {
+    font-size: 1.5rem;
+}
+
+#weather-image {
+  margin-bottom: 40px;
+}
+
+/* calendat widget */
+
+
+

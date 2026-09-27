@@ -28,194 +28,197 @@
                Do not venture beyond the bounds of Babel. We look forward to having you. 
             </div>
         </div>
+
+        <div id="app-grid">
         
-        <div id="notesapp" class="flex-row app">
-            <div>
-            <img src="./images/book222.png" id="open-notes-tab" class="open-button">
-            </div>
-            <div>
-            <p class="jacquarda-bastarda-9-regular apptitle" >Notes</p>
-            </div>
-        </div>
-        <div id="notes" class="app-window notes-window">
-            <div id="notesheader" class="app-header">
-                <p class="jacquarda-bastarda-9-regular header-title" >Notes</p>
-                <img src="./images/closebutton.png" height="30px" id="close-notes-tab" class="close-button">
-            </div>
-            <div id="notes-content">
-                <button id="new-note-button" class="add-note jacquarda-bastarda-9-regular" type="button">+</button>
-            </div>
-        </div>
-
-
-
-        <div id="musicapp" class="flex-row app">
-            <div>
-            <img src="./images/recordplayer.png" id="open-music-tab" class="open-button">
-            </div>
-            <div>
-            <p class="jacquarda-bastarda-9-regular apptitle" >Record Player</p>
-            </div>
-        </div>
-        <div id="music" class="app-window music-window">
-            <div id="musicheader" class="app-header">
-                <p class="jacquarda-bastarda-9-regular header-title" >Record Player</p>
-                <img src="./images/closebutton.png" height="30px" id="close-music-tab" class="close-button">
-            </div>
-            <div id="music-item-holder">
-                <img id="song-image" src="./images/music-image.png" height="300px">
-                <div id="song-name" class="music-text">Song Name</div>
-                <div id="song-artist" class="music-text song-artist">Artist</div>
-                <input id="slider-song" type="range" width="400px">
+            <div id="notesapp" class="flex-row app">
                 <div>
-                    <button id="shuffle-song" class="music-button">⇄</button>
-                    <button id="prev-song" class="music-button">⏮</button>
-                    <button id="playpause-song" class="music-button">▶</button>
-                    <button id="next-song" class="music-button">⏭</button>
-                    <button id="replay-song" class="music-button">↻</button>
+                <img src="./images/bookicon.png" id="open-notes-tab" class="open-button">
+                </div>
+                <div>
+                <p class="jacquarda-bastarda-9-regular apptitle" >Notes</p>
                 </div>
             </div>
-        </div>
+            <div id="notes" class="app-window notes-window">
+                <div id="notesheader" class="app-header">
+                    <p class="jacquarda-bastarda-9-regular header-title" >Notes</p>
+                    <img src="./images/closebutton.png" height="30px" id="close-notes-tab" class="close-button">
+                </div>
+                <div id="notes-content">
+                    <button id="new-note-button" class="add-note jacquarda-bastarda-9-regular" type="button">+</button>
+                </div>
+            </div>
 
 
 
-        <div id="calculatorapp" class="flex-row app">
-            <div>
-            <img src="./images/calcblue.png" id="open-calculator-tab" class="open-button">
+            <div id="musicapp" class="flex-row app">
+                <div>
+                <img src="./images/recordplayer.png" id="open-music-tab" class="open-button">
+                </div>
+                <div>
+                <p class="jacquarda-bastarda-9-regular apptitle" >Record Player</p>
+                </div>
             </div>
-            <div>
-            <p id="calc-title" class="jacquarda-bastarda-9-regular apptitle" >Calculator</p>
-            </div>
-        </div>
-        <div id="calculator" class="app-window calc-window">
-            <div id="calculatorheader" class="app-header">
-                <p class="jacquarda-bastarda-9-regular header-title" >Calculator</p>
-                <img src="./images/closebutton.png" height="30px" id="close-calculator-tab" class="close-button">
-            </div>
-            <div id="act-calculator">
-                    <input id="display" readonly>
-                    <div id="keys">
-                        <button class="calc-button" onclick="appendToDisplay('+')">+</button>
-                        <button class="calc-button" onclick="appendToDisplay('7')">7</button>
-                        <button class="calc-button" onclick="appendToDisplay('8')">8</button>
-                        <button class="calc-button" onclick="appendToDisplay('9')">9</button>
-                        <button class="calc-button" onclick="appendToDisplay('-')">-</button>
-                        <button class="calc-button" onclick="appendToDisplay('4')">4</button>
-                        <button class="calc-button" onclick="appendToDisplay('5')">5</button>
-                        <button class="calc-button" onclick="appendToDisplay('6')">6</button>
-                        <button class="calc-button" onclick="appendToDisplay('*')">*</button>
-                        <button class="calc-button" onclick="appendToDisplay('1')">1</button>
-                        <button class="calc-button" onclick="appendToDisplay('2')">2</button>
-                        <button class="calc-button" onclick="appendToDisplay('3')">3</button>
-                        <button class="calc-button" onclick="appendToDisplay('/')">/</button>
-                        <button class="calc-button" onclick="appendToDisplay('0')">0</button>
-                        <button class="calc-button" onclick="appendToDisplay('.')">.</button>
-                        <button class="calc-button" onclick="calculate()">=</button>
-                        <button class="calc-button" onclick="clearDisplay()">C</button>
+            <div id="music" class="app-window music-window">
+                <div id="musicheader" class="app-header">
+                    <p class="jacquarda-bastarda-9-regular header-title" >Record Player</p>
+                    <img src="./images/closebutton.png" height="30px" id="close-music-tab" class="close-button">
+                </div>
+                <div id="music-item-holder">
+                    <img id="song-image" src="./images/music-image.png" height="300px">
+                    <div id="song-name" class="music-text">Song Name</div>
+                    <div id="song-artist" class="music-text song-artist">Artist</div>
+                    <input id="slider-song" type="range" width="400px">
+                    <div>
+                        <button id="shuffle-song" class="music-button">⇄</button>
+                        <button id="prev-song" class="music-button">⏮</button>
+                        <button id="playpause-song" class="music-button">▶</button>
+                        <button id="next-song" class="music-button">⏭</button>
+                        <button id="replay-song" class="music-button">↻</button>
                     </div>
-            </div>
-        </div>
-
-
-        <div id="browserapp" class="flex-row app">
-            <div>
-            <img src="./images/telee.png" id="open-browser-tab" class="open-button">
-            </div>
-            <div>
-            <p class="jacquarda-bastarda-9-regular apptitle" >Browser</p>
-            </div>
-        </div>
-        <div id="browser" class="app-window browser-window">
-            <div id="browserheader" class="app-header">
-                <p class="jacquarda-bastarda-9-regular header-title" >Browser</p>
-                <img src="./images/closebutton.png" height="30px" id="close-browser-tab" class="close-button">
-            </div>
-            <iframe src="https://www.google.com/search?igu=1"></iframe>
-        </div>
-
-
-        <div id="pomoapp" class="flex-row app">
-            <div>
-            <img src="./images/telee.png" id="open-pomo-tab" class="open-button">
-            </div>
-            <div>
-            <p class="jacquarda-bastarda-9-regular apptitle" >Pomodoro</p>
-            </div>
-        </div>
-        <div id="pomo" class="app-window pomo-window">
-            <div id="pomoheader" class="app-header">
-                <p class="jacquarda-bastarda-9-regular header-title" >Pomodoro</p>
-                <img src="./images/closebutton.png" height="30px" id="close-pomo-tab" class="close-button">
-            </div>
-            <p id="pomo-timer">25:00</p>
-            <div id="pomo-button-holder">
-                <button id="start" class="pomo-button">Start</button>
-                <button id="stop" class="pomo-button">Stop</button>
-                <button id="reset" class="pomo-button">Reset</button>
-            </div>
-            
-        </div>
-
-        <div id="photoapp" class="flex-row app">
-            <div>
-            <img src="./images/telee.png" id="open-photo-tab" class="open-button">
-            </div>
-            <div>
-            <p class="jacquarda-bastarda-9-regular apptitle" >PhotoBooth</p>
-            </div>
-        </div>
-        <div id="photo" class="app-window photo-window">
-            <div id="photoheader" class="app-header">
-                <p class="jacquarda-bastarda-9-regular header-title" >Photo Booth</p>
-                <img src="./images/closebutton.png" height="30px" id="close-photo-tab" class="close-button">
-            </div>
-            
-        </div>
-
-        <div id="listapp" class="flex-row app">
-            <div>
-            <img src="./images/telee.png" id="open-list-tab" class="open-button">
-            </div>
-            <div>
-            <p class="jacquarda-bastarda-9-regular apptitle" >Reminders</p>
-            </div>
-        </div>
-        <div id="list" class="app-window list-window">
-            <div id="listheader" class="app-header">
-                <p class="jacquarda-bastarda-9-regular header-title" >List</p>
-                <img src="./images/closebutton.png" height="30px" id="close-list-tab" class="close-button">
-            </div>
-            
-        </div>
-
-        <div id="weatherapp" class="flex-row app">
-            <div>
-            <img src="./images/telee.png" id="open-weather-tab" class="open-button">
-            </div>
-            <div>
-            <p class="jacquarda-bastarda-9-regular apptitle">Weather</p>
-            </div>
-        </div>
-        <div id="weather" class="app-window weather-window" style="z-index: 31; top: 477px; left: 873px; display: flex;">
-            <div id="weatherheader" class="app-header">
-                <p class="jacquarda-bastarda-9-regular header-title">Weather</p>
-                <img src="./images/closebutton.png" height="30px" id="close-weather-tab" class="close-button">
-            </div>
-            <div id="weather-container">
-                <h1>Weather</h1>
-                <div id="weather-search-container">
-                    <input type="text" id="weather-city-input" placeholder="Enter City Name">
-                    <button id="weather-search-button">Search</button>
                 </div>
-                <h2 id="weather-city"></h2>
-                <img id="weather-image" height="100px" width="100px">
-                <p class="weather-info"><b>Temperature: </b> <span id="weather-temperature"></span>˚C</p>
-                <p class="weather-info"><b>Condition: </b> <span id="weather-condition"></span></p>
-                <p class="weather-info"><b>Wind Speed: </b> <span id="weather-windspeed"></span>km/h</p>
             </div>
-            
-        </div>
 
+
+
+            <div id="calculatorapp" class="flex-row app">
+                <div>
+                <img src="./images/calcblue.png" id="open-calculator-tab" class="open-button">
+                </div>
+                <div>
+                <p id="calc-title" class="jacquarda-bastarda-9-regular apptitle" >Calculator</p>
+                </div>
+            </div>
+            <div id="calculator" class="app-window calc-window">
+                <div id="calculatorheader" class="app-header">
+                    <p class="jacquarda-bastarda-9-regular header-title" >Calculator</p>
+                    <img src="./images/closebutton.png" height="30px" id="close-calculator-tab" class="close-button">
+                </div>
+                <div id="act-calculator">
+                        <input id="display" readonly>
+                        <div id="keys">
+                            <button class="calc-button" onclick="appendToDisplay('+')">+</button>
+                            <button class="calc-button" onclick="appendToDisplay('7')">7</button>
+                            <button class="calc-button" onclick="appendToDisplay('8')">8</button>
+                            <button class="calc-button" onclick="appendToDisplay('9')">9</button>
+                            <button class="calc-button" onclick="appendToDisplay('-')">-</button>
+                            <button class="calc-button" onclick="appendToDisplay('4')">4</button>
+                            <button class="calc-button" onclick="appendToDisplay('5')">5</button>
+                            <button class="calc-button" onclick="appendToDisplay('6')">6</button>
+                            <button class="calc-button" onclick="appendToDisplay('*')">*</button>
+                            <button class="calc-button" onclick="appendToDisplay('1')">1</button>
+                            <button class="calc-button" onclick="appendToDisplay('2')">2</button>
+                            <button class="calc-button" onclick="appendToDisplay('3')">3</button>
+                            <button class="calc-button" onclick="appendToDisplay('/')">/</button>
+                            <button class="calc-button" onclick="appendToDisplay('0')">0</button>
+                            <button class="calc-button" onclick="appendToDisplay('.')">.</button>
+                            <button class="calc-button" onclick="calculate()">=</button>
+                            <button class="calc-button" onclick="clearDisplay()">C</button>
+                        </div>
+                </div>
+            </div>
+
+
+            <div id="browserapp" class="flex-row app">
+                <div>
+                <img src="./images/telee.png" id="open-browser-tab" class="open-button">
+                </div>
+                <div>
+                <p class="jacquarda-bastarda-9-regular apptitle" >Browser</p>
+                </div>
+            </div>
+            <div id="browser" class="app-window browser-window">
+                <div id="browserheader" class="app-header">
+                    <p class="jacquarda-bastarda-9-regular header-title" >Browser</p>
+                    <img src="./images/closebutton.png" height="30px" id="close-browser-tab" class="close-button">
+                </div>
+                <iframe src="https://www.google.com/search?igu=1"></iframe>
+            </div>
+
+
+            <div id="pomoapp" class="flex-row app">
+                <div>
+                <img src="./images/pomoicon.png" id="open-pomo-tab" class="open-button">
+                </div>
+                <div>
+                <p class="jacquarda-bastarda-9-regular apptitle" >Pomodoro</p>
+                </div>
+            </div>
+            <div id="pomo" class="app-window pomo-window">
+                <div id="pomoheader" class="app-header">
+                    <p class="jacquarda-bastarda-9-regular header-title" >Pomodoro</p>
+                    <img src="./images/closebutton.png" height="30px" id="close-pomo-tab" class="close-button">
+                </div>
+                <p id="pomo-timer">25:00</p>
+                <div id="pomo-button-holder">
+                    <button id="start" class="pomo-button">Start</button>
+                    <button id="stop" class="pomo-button">Stop</button>
+                    <button id="reset" class="pomo-button">Reset</button>
+                </div>
+                
+            </div>
+
+            <div id="photoapp" class="flex-row app">
+                <div>
+                <img src="./images/telee.png" id="open-photo-tab" class="open-button">
+                </div>
+                <div>
+                <p class="jacquarda-bastarda-9-regular apptitle" >PhotoBooth</p>
+                </div>
+            </div>
+            <div id="photo" class="app-window photo-window">
+                <div id="photoheader" class="app-header">
+                    <p class="jacquarda-bastarda-9-regular header-title" >Photo Booth</p>
+                    <img src="./images/closebutton.png" height="30px" id="close-photo-tab" class="close-button">
+                </div>
+                
+            </div>
+
+            <div id="listapp" class="flex-row app">
+                <div>
+                <img src="./images/telee.png" id="open-list-tab" class="open-button">
+                </div>
+                <div>
+                <p class="jacquarda-bastarda-9-regular apptitle" >Reminders</p>
+                </div>
+            </div>
+            <div id="list" class="app-window list-window">
+                <div id="listheader" class="app-header">
+                    <p class="jacquarda-bastarda-9-regular header-title" >List</p>
+                    <img src="./images/closebutton.png" height="30px" id="close-list-tab" class="close-button">
+                </div>
+                
+            </div>
+
+            <div id="weatherapp" class="flex-row app">
+                <div>
+                <img src="./images/cloudy.png" id="open-weather-tab" class="open-button">
+                </div>
+                <div>
+                <p class="jacquarda-bastarda-9-regular apptitle">Weather</p>
+                </div>
+            </div>
+            <div id="weather" class="app-window weather-window" style="z-index: 31; top: 477px; left: 873px; display: flex;">
+                <div id="weatherheader" class="app-header">
+                    <p class="jacquarda-bastarda-9-regular header-title">Weather</p>
+                    <img src="./images/closebutton.png" height="30px" id="close-weather-tab" class="close-button">
+                </div>
+                <div id="weather-container">
+                    <h1>Weather</h1>
+                    <div id="weather-search-container">
+                        <input type="text" id="weather-city-input" placeholder="Enter City Name">
+                        <button id="weather-search-button">Search</button>
+                    </div>
+                    <h2 id="weather-city"></h2>
+                    <img id="weather-image" height="150px" width="150px">
+                    <p class="weather-info"><b>Temperature: </b> <span id="weather-temperature"></span>˚C</p>
+                    <p class="weather-info"><b>Condition: </b> <span id="weather-condition"></span></p>
+                    <p class="weather-info"><b>Wind Speed: </b> <span id="weather-windspeed"></span>km/h</p>
+                </div>
+                
+            </div>
+        
+        </div>
 
 
         

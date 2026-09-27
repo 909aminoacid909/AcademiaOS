@@ -372,7 +372,7 @@ body {
     flex-direction: column;
     background-color: rgb(90, 110, 107);
     color: rgb(28, 26, 24);
-    height: 550px;
+    height: 600px;
 }
 
 #weather-container {
@@ -419,7 +419,16 @@ body {
   margin-bottom: 40px;
 }
 
+#open-pomo-tab {
+  height: 115px;
+  width: auto;
+}
+
 /* calendat widget */
+
+#app-grid {
+  
+}
 
 
 

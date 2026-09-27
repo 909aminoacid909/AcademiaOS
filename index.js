@@ -529,7 +529,7 @@ const weatherCodeMap = {
     0: ["Clear Sky", "./images/sun.png"],
     1: ["Mainly Clear", "./images/sun.png"],
     2: ["Partly Cloudy", "./images/cloudy.png"],
-    3: ["Overcast", "./images/overcast.png"],
+    3: ["Overcast", "./images/cloudy.png"],
     45: ["Fog", "./images/fog.png"],
     48: ["Depositing Rime Fog", "./images/fog.png"],
     51: ["Light Drizzle", "./images/rain.png"],
@@ -590,6 +590,9 @@ async function getWeather() {
 
 
 }
+
+
+
 
 
 

@@ -48,7 +48,7 @@ p {
   width: 500px;
   background-color: #6b6e73;
   border: 8px solid #1c1a18;
-  display: none ;
+  display: none;
 }
 
 #welcome {
@@ -368,12 +368,13 @@ body {
 /* weather widget */
 
 .weather-window {
-    display: flex;
+    display: none;
     flex-direction: column;
-    background-color: rgb(90, 110, 107);
+    background-color: #5a6e6b;
     color: rgb(28, 26, 24);
     height: 600px;
 }
+
 
 #weather-container {
     display: flex;
@@ -424,10 +425,55 @@ body {
   width: auto;
 }
 
-/* calendat widget */
 
 #app-grid {
-  
+  display: grid;
+  grid-template-rows: repeat(4, 170px);
+  grid-template-columns: repeat(10, 140px);
+  grid-auto-flow: column;
+}
+
+/* widgets */
+
+#clock-widget {
+  grid-column: 9/10;
+  grid-row: 1/2;
+  gap: 10px;
+}
+
+#antique-clock-image {
+  height: 300px;
+  width: auto;
+  margin-top: 50px;
+}
+
+#cat-gif-widget {
+  grid-column: 9/10;
+  grid-row: 3;
+}
+
+#cat-gif {
+  margin-top: 30px;
+  margin-left: 40px;
+  height: 100px;
+  width: auto;
+}
+
+#date-widget {
+  height: 90px;
+  width: 220px;
+  background-color: #5a6e6b;
+  border: 6px solid #1c1a18;
+  position: relative;
+  bottom: 14px;
+  left: 56px;
+}
+
+#date-widget-text {
+  font-family: "Jacquarda Bastarda 9", serif;
+  color: #1c1a18;
+  font-size: 3.5rem;
+  text-align: center;
 }
 
 

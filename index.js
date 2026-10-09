@@ -112,6 +112,7 @@ weatherScreenOpen.addEventListener("click", function() {
 
 
 
+
 // move clicked window to the front of screen
 windowTapHandling(notesScreen)
 windowTapHandling(musicScreen)
@@ -590,6 +591,17 @@ async function getWeather() {
 
 
 }
+
+
+// date widget
+
+const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+document.getElementById("date-widget-text").innerText = today;
+
+ 
+
+
+
 
 
 

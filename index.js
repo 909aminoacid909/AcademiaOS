@@ -1,5 +1,5 @@
 setInterval( updateTime, 1000);
-var biggestIndex = 1;
+var biggestIndex = 3;
 var selectedIcon = undefined;
 var topBar = document.querySelector("#taskbar");
 
@@ -10,8 +10,6 @@ dragElement(document.getElementById("music"));
 dragElement(document.getElementById("calculator"));
 dragElement(document.getElementById("browser"));
 dragElement(document.getElementById("pomo"));
-dragElement(document.getElementById("photo"));
-dragElement(document.getElementById("list"));
 dragElement(document.getElementById("weather"));
 
 
@@ -80,25 +78,6 @@ pomoScreenOpen.addEventListener("click", function() {
   openWindow(pomoScreen)
 })
 
-var photoScreen = document.querySelector("#photo");
-var photoScreenClose = document.querySelector("#close-photo-tab");
-var photoScreenOpen = document.querySelector("#open-photo-tab");
-photoScreenClose.addEventListener("click", function() {
-  closeWindow(photoScreen)
-})
-photoScreenOpen.addEventListener("click", function() {
-  openWindow(photoScreen)
-})
-
-var listScreen = document.querySelector("#list");
-var listScreenClose = document.querySelector("#close-list-tab");
-var listScreenOpen = document.querySelector("#open-list-tab");
-listScreenClose.addEventListener("click", function() {
-  closeWindow(listScreen)
-})
-listScreenOpen.addEventListener("click", function() {
-  openWindow(listScreen)
-})
 
 var weatherScreen = document.querySelector("#weather");
 var weatherScreenClose = document.querySelector("#close-weather-tab");
@@ -120,8 +99,6 @@ windowTapHandling(calculatorScreen)
 windowTapHandling(browserScreen)
 windowTapHandling(welcomeScreen)
 windowTapHandling(pomoScreen)
-windowTapHandling(photoScreen)
-windowTapHandling(listScreen)
 windowTapHandling(weatherScreen)
 
 
@@ -145,13 +122,6 @@ document.querySelector("#pomoapp").addEventListener("click", function() {
   handleIconTap(document.querySelector("#pomoapp"));
 });
 
-document.querySelector("#photoapp").addEventListener("click", function() {
-  handleIconTap(document.querySelector("#photoapp"));
-});
-
-document.querySelector("#listapp").addEventListener("click", function() {
-  handleIconTap(document.querySelector("#listapp"));
-});
 
 document.querySelector("#weatherapp").addEventListener("click", function() {
   handleIconTap(document.querySelector("#weatherapp"));

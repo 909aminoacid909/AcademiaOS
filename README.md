@@ -9,6 +9,7 @@ AcademiaOS is my own web-based operating system loosely inspired by a dark acade
 I used HTML, CSS and Javascript. This is my first javascript project so the functionality here is relatively simple. I used libesprite to design the background and all the icons. 
 I used google fonts for all the text.
 
+
 ## Concept
 Ive been wanting to try pixel art forever, and I recently read Babel which is a dark academia book so I merged the two together to create this project. I spent around 5 hours on all the art. I kept all my tabs and buttons rectangular to fit with the aesthetic. I couldnt figure out how to convert the google browser to dark mode so i just inverted the colors. The inverted color images might look concerning, but at least it matches with the rest of the site am i right.
 

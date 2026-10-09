@@ -473,7 +473,7 @@ function startTimer() {
         updateTimer();
       }
 
-  }, 1000);
+    }, 1000);
 };
 
 function stopTimer() {

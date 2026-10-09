@@ -588,8 +588,6 @@ async function getWeather() {
   document.getElementById("weather-windspeed").innerText = windSpeed;
   document.getElementById("weather-condition").innerText = weatherCondition;
   document.getElementById("weather-city").innerText = city
-
-
 }
 
 
@@ -598,8 +596,25 @@ async function getWeather() {
 const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 document.getElementById("date-widget-text").innerText = today;
 
- 
+ // clock widget
 
+function clockWidget() {
+  var h = document.getElementById("hour-hand");
+  var m = document.getElementById("minute-hand")
+
+  let date = new Date();
+
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  hourRotation = 30 * hours + minutes/2;
+  minRotation = 6 * minutes
+
+  h.style.transform = `rotate(${hourRotation}deg)`;
+  m.style.transform = `rotate(${minRotation}deg)`;
+}
+
+setInterval(clockWidget, 1000)
 
 
 

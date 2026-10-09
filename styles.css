@@ -476,5 +476,41 @@ body {
   text-align: center;
 }
 
+/* clock */
+
+#hour-hand {
+  height: 45px;
+  width: 4px;
+  background-color:#80827c;
+  position: relative;
+  left: 165px;
+  bottom: 199px;
+  z-index: 1;
+  transform-origin: bottom;
+}
+
+#minute-hand {
+  height: 70px;
+  width: 4px;
+  background-color: #80827c;
+  position: relative;
+  left: 165px;
+  bottom: 270px;
+  transform-origin: bottom;
+
+}
+
+#clock-center {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color:#675f57;
+  position: relative;
+  left: 158px;
+  bottom: 280px;
+  z-index: 2;
+  transform-origin: bottom;
+}
+
 
 

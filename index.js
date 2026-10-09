@@ -450,7 +450,7 @@ let interval
 
 function updateTimer() {
   let minutes = Math.floor(timeLeft / 60);
-  let seconds = timeleft % 60;
+  let seconds = timeLeft % 60;
   let formattedTime = minutes + ":" + seconds;
 
   pomoTimer.innerHTML = formattedTime;
@@ -462,16 +462,16 @@ function updateTimer() {
 };
 
 function startTimer() {
-  interval = setInterval(() => {
-    timeLeft--;
-    updateTimer();
-
-    if (timeLeft === 0) {
-      clearInterval(interval);
-      alert("Study Session's over!");
-      timeLeft = 1500;
+    interval = setInterval(() => {
+      timeLeft--;
       updateTimer();
-    }
+
+      if (timeLeft === 0) {
+        clearInterval(interval);
+        alert("Study Session's over!");
+        timeLeft = 1500;
+        updateTimer();
+      }
 
   }, 1000);
 };
@@ -483,8 +483,9 @@ function stopTimer() {
 function resetTimer() {
   clearInterval(interval);
   timeLeft = 1500;
-  updateTimer();
+  pomoTimer.innerHTML = "25:00";
 };
+
 
 startButton.addEventListener("click", startTimer);
 stopButton.addEventListener("click", stopTimer);
